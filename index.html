@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏢 Employee Payroll Management System</h1>
+            <p class="date">Dashboard | October 2025</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                    <h3>Total Employees</h3>
+                    <p class="stat-value">4</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-info">
+                    <h3>Total Payroll</h3>
+                    <p class="stat-value">$193,200</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <h3>Avg Salary</h3>
+                    <p class="stat-value">$48,300</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Employee Records</h2>
+            <table class="employee-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Base Salary</th>
+                        <th>Bonus</th>
+                        <th>Tax</th>
+                        <th>Net Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td><span class="badge badge-it">IT</span></td>
+                        <td>$60,000</td>
+                        <td>$5,000</td>
+                        <td class="tax">-$6,500</td>
+                        <td class="net-salary">$58,500</td>
+                        <td>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td><span class="badge badge-hr">HR</span></td>
+                        <td>$45,000</td>
+                        <td>$3,000</td>
+                        <td class="tax">-$2,400</td>
+                        <td class="net-salary">$45,600</td>
+                        <td>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mike Johnson</td>
+                        <td><span class="badge badge-finance">Finance</span></td>
+                        <td>$55,000</td>
+                        <td>$4,000</td>
+                        <td class="tax">-$5,900</td>
+                        <td class="net-salary">$53,100</td>
+                        <td>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Sarah Williams</td>
+                        <td><span class="badge badge-it">IT</span></td>
+                        <td>$48,000</td>
+                        <td>$2,000</td>
+                        <td class="tax">-$2,500</td>
+                        <td class="net-salary">$47,500</td>
+                        <td>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>➕ Add New Employee</h2>
+            <form class="employee-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Employee Name</label>
+                        <input type="text" id="name" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="salary">Base Salary ($)</label>
+                        <input type="number" id="salary" placeholder="45000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bonus">Bonus ($)</label>
+                        <input type="number" id="bonus" placeholder="3000" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Add Employee</button>
+            </form>
+        </div>
+
+        <div class="section payslip-section">
+            <h2>💵 Sample Payslip</h2>
+            <div class="payslip">
+                <div class="payslip-header">
+                    <h3>EMPLOYEE PAYSLIP</h3>
+                    <p>Month: October 2025</p>
+                </div>
+                <div class="payslip-body">
+                    <div class="payslip-row">
+                        <span>Employee ID:</span>
+                        <span>1</span>
+                    </div>
+                    <div class="payslip-row">
+                        <span>Name:</span>
+                        <span>John Doe</span>
+                    </div>
+                    <div class="payslip-row">
+                        <span>Department:</span>
+                        <span>IT</span>
+                    </div>
+                    <hr>
+                    <div class="payslip-row">
+                        <span>Base Salary:</span>
+                        <span>$60,000</span>
+                    </div>
+                    <div class="payslip-row">
+                        <span>Bonus:</span>
+                        <span>$5,000</span>
+                    </div>
+                    <div class="payslip-row">
+                        <span><strong>Gross Salary:</strong></span>
+                        <span><strong>$65,000</strong></span>
+                    </div>
+                    <hr>
+                    <div class="payslip-row tax-row">
+                        <span>Tax Deduction (10%):</span>
+                        <span>-$6,500</span>
+                    </div>
+                    <hr>
+                    <div class="payslip-row net-row">
+                        <span><strong>NET SALARY:</strong></span>
+                        <span><strong>$58,500</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Payroll Management System | Built with Java, HTML & CSS</p>
+        </footer>
+    </div>
+</body>
+</html>
