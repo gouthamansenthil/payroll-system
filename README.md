@@ -310,8 +310,8 @@ This project is open source and available for educational purposes.
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@gouthaman]([https://github.com/yourusername](https://github.com/gouthamansenthil/payroll-system/edit/main/README.md))
+- Email: gouthaman12345@gmail.com
 
 ---
 
