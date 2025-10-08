@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0000006a 0%, #240404 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0000006a 0%, #240404 100%);
     color: white;
     padding: 30px;
     text-align: center;
@@ -76,7 +76,7 @@ header h1 {
 .stat-value {
     font-size: 2em;
     font-weight: bold;
-    color: #667eea;
+    color: #0000006a;
 }
 
 .section {
@@ -87,7 +87,7 @@ header h1 {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.8em;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #0000006a;
     padding-bottom: 10px;
 }
 
@@ -102,7 +102,7 @@ header h1 {
 }
 
 .employee-table thead {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0000006a 0%, #240404 100%);
     color: white;
 }
 
@@ -167,7 +167,7 @@ header h1 {
 }
 
 .btn-view {
-    background: #667eea;
+    background: #0000006a;
     color: white;
 }
 
@@ -221,11 +221,11 @@ header h1 {
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #0000006a;
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0000006a 0%, #240404 100%);
     color: white;
     padding: 15px 40px;
     border: none;
@@ -255,7 +255,7 @@ header h1 {
 }
 
 .payslip-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0000006a 0%, #240404 100%);
     color: white;
     padding: 20px;
     text-align: center;
