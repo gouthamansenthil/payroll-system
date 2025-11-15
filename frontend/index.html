@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Authority of India Limited (SAIL) - Salem Steel Plant Payroll System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional CSS for enhanced appearance */
+        :root {
+            --sail-blue: #004c97;
+            --sail-red: #d52b1e;
+            --sail-light-blue: #0066b3;
+            --sail-gray: #f5f5f5;
+            --sail-dark: #333333;
+        }
+        
+        .sail-header {
+            background: linear-gradient(135deg, var(--sail-blue), var(--sail-light-blue));
+            border-bottom: 4px solid var(--sail-red);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .sail-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .sail-logo i {
+            font-size: 28px;
+            color: var(--sail-blue);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.2rem;
+            color: white;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: white;
+        }
+        
+        .sail-footer {
+            background: linear-gradient(135deg, var(--sail-dark), #444);
+            color: white;
+            border-top: 4px solid var(--sail-red);
+        }
+        
+        .stat-card {
+            background: white;
+            border-left: 4px solid var(--sail-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-icon {
+            background: linear-gradient(135deg, var(--sail-blue), var(--sail-light-blue));
+        }
+        
+        .btn-primary {
+            background: var(--sail-blue);
+        }
+        
+        .btn-primary:hover {
+            background: var(--sail-light-blue);
+        }
+        
+        .section-header h2 {
+            color: var(--sail-blue);
+            border-bottom: 2px solid var(--sail-gray);
+            padding-bottom: 10px;
+        }
+        
+        .payslip-header {
+            background: linear-gradient(135deg, var(--sail-blue), var(--sail-light-blue));
+        }
+        
+        .table-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: var(--sail-blue);
+            color: white;
+        }
+        
+        .form-container {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--sail-blue);
+        }
+        
+        .notification {
+            border-left: 4px solid;
+        }
+        
+        .notification-success {
+            border-left-color: #27ae60;
+        }
+        
+        .notification-error {
+            border-left-color: #e74c3c;
+        }
+        
+        .notification-warning {
+            border-left-color: #f39c12;
+        }
+        
+        .report-card {
+            border-top: 4px solid var(--sail-blue);
+        }
+        
+        .search-section {
+            border-top: 4px solid var(--sail-blue);
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--sail-gray), white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .quick-actions {
+            border-top: 4px solid var(--sail-blue);
+        }
+        
+        /* Enhanced responsive design */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .sail-logo {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- Header -->
+<header class="header sail-header">
+    <div class="container">
+        <div class="logo-container">
+            <div class="sail-logo">
+                <img src="assets\SAIL_LOGO_NEW.png" alt="SAIL Logo" class="logo-image">
+            </div>
+            <div class="logo-text">
+                <h1>Steel Authority of India Limited (SAIL)</h1>
+                <p>Salem Steel Plant - Employee Payroll Management System</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                <li><a href="#employees" class="nav-link">Employees</a></li>
+                <li><a href="#payslips" class="nav-link">Payslips</a></li>
+                <li><a href="#reports" class="nav-link">Reports</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="dashboard-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                    <p>Welcome to Steel Authority of India Limited (SAIL) Payroll System</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalEmployees">0</h3>
+                            <p>Total Employees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalPayroll">₹0.00</h3>
+                            <p>Monthly Payroll</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="avgSalary">₹0.00</h3>
+                            <p>Average Salary</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="showSection('employees')">
+                            <i class="fas fa-user-plus"></i> Add Employee
+                        </button>
+                        <button class="btn btn-secondary" onclick="generatePayslipPrompt()">
+                            <i class="fas fa-file-invoice"></i> Generate Payslip
+                        </button>
+                        <button class="btn btn-info" onclick="showSection('reports')">
+                            <i class="fas fa-chart-bar"></i> View Reports
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Employees Section -->
+            <section id="employees" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Employee Management</h2>
+                    <button class="btn btn-primary" onclick="showAddEmployeeForm()">
+                        <i class="fas fa-plus"></i> Add New Employee
+                    </button>
+                </div>
+
+                <!-- Add Employee Form -->
+                <div id="addEmployeeForm" class="form-container" style="display: none;">
+                    <h3>Add New Employee</h3>
+                    <form id="employeeForm" onsubmit="addEmployee(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="designation">Designation:</label>
+                            <input type="text" id="designation" name="designation" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="basicSalary">Basic Salary (₹):</label>
+                                <input type="number" id="basicSalary" name="basicSalary" step="0.01" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hra">HRA (₹):</label>
+                                <input type="number" id="hra" name="hra" step="0.01" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="tax">Tax (₹):</label>
+                                <input type="number" id="tax" name="tax" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Calculated Net Salary: <span id="netSalaryDisplay">₹0.00</span></label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-success">Add Employee</button>
+                            <button type="button" class="btn btn-secondary" onclick="hideAddEmployeeForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Employees Table -->
+                <div class="table-container">
+                    <table id="employeesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Basic Salary</th>
+                                <th>HRA</th>
+                                <th>Tax</th>
+                                <th>Net Salary</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeesTableBody">
+                            <!-- Employee data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Payslips Section -->
+            <section id="payslips" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-invoice"></i> Payslip Management</h2>
+                </div>
+
+                <div class="payslip-controls">
+                    <div class="form-group">
+                        <label for="employeeSelect">Select Employee:</label>
+                        <select id="employeeSelect" onchange="loadEmployeeForPayslip()">
+                            <option value="">Select an employee</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="payslipContainer" class="payslip-container" style="display: none;">
+                    <!-- Payslip will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Reports & Analytics</h2>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Payroll Summary</h3>
+                        <div class="report-content">
+                            <p>Total Monthly Payroll: <strong id="reportTotalPayroll">₹0.00</strong></p>
+                            <p>Total Employees: <strong id="reportTotalEmployees">0</strong></p>
+                            <p>Average Salary: <strong id="reportAvgSalary">₹0.00</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Designation Distribution</h3>
+                        <div id="designationChart" class="chart-container">
+                            <!-- Chart will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-section">
+                    <h3>Search by Designation</h3>
+                    <div class="search-controls">
+                        <input type="text" id="designationSearch" placeholder="Enter designation...">
+                        <button class="btn btn-primary" onclick="searchByDesignation()">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    <div id="searchResults" class="search-results">
+                        <!-- Search results will be displayed here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer sail-footer">
+        <div class="container">
+            <p>&copy; 2024 Steel Authority of India Limited (SAIL) - Salem Steel Plant</p>
+            <p>Employee Payroll Management System | Digital Solution for Industrial Workforce Management</p>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
